@@ -33,7 +33,7 @@
             background-image: linear-gradient(to right, #1daeae, #ebf8f8);
             padding: 5px 15px;
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 600;
             margin: 0px 20px;
         }
     }
