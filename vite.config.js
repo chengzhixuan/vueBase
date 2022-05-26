@@ -1,9 +1,37 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import viteImagemin from 'vite-plugin-imagemin'
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [vue()],
+    plugins: [
+        vue(),
+        viteImagemin({ // 配置各种类型的图片压缩
+            gifsicle: { // gif压缩
+                optimizationLevel: 7, // 压缩比例
+            },
+            optipng: {
+                optimizationLevel: 7,
+            },
+            mozjpeg: {
+                quality: 20,
+            },
+            pngquant: {
+                quality: [0.8, 0.9],
+                speed: 4,
+            },
+            svgo: {
+                plugins: [{
+                        name: 'removeViewBox',
+                    },
+                    {
+                        name: 'removeEmptyAttrs',
+                        active: false,
+                    },
+                ],
+            },
+        }),
+    ],
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'), //别名配置 在项目里可以使用 @ 表示 src 文件夹

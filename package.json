@@ -16,9 +16,12 @@
         "vue-router": "^4.0.13"
     },
     "devDependencies": {
+        "@vitejs/plugin-vue": "^2.2.0",
+        "gifsicle": "^7.0.1",
+        "jpegtran-bin": "^7.0.0",
         "less": "^4.1.2",
         "less-loader": "^10.2.0",
-        "@vitejs/plugin-vue": "^2.2.0",
-        "vite": "^2.8.0"
+        "vite": "^2.8.0",
+        "vite-plugin-imagemin": "^0.6.1"
     }
 }
